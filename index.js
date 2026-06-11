@@ -15,12 +15,12 @@ const server = createServer((request, response) => {
 
   let currentPage = "index.html";
   // this is  checking the path the client is trying to access.
-  // structure of an url =>  "  https: // user   :   pass   @ sub.example.com : 8080   /p/a/t/h  ?  query=string   #hash "
+  // structure of an url `=>  "  https: // user   :   pass   @ sub.example.com : 8080   /p/a/t/h  ?  query=string   #hash "
   if (request.url == "/") {
     currentPage = "index.html";
   } else if (request.url == "/about") {
     currentPage = "about.html";
-  } else if (request.url == "./contact-me") {
+  } else if (request.url == "/contact-me") {
     currentPage = "contact-me.html";
   } else {
     currentPage = "404.html";

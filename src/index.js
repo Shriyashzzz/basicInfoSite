@@ -1,4 +1,4 @@
-//importing necessary files
+//importing necessary modules from node runtime
 
 import { createServer } from "node:http";
 import fs from "node:fs";
@@ -6,7 +6,8 @@ import { error } from "node:console";
 import url from "node:url";
 
 //define the port & the | hostname /ip =>(default is localhost/127.0.0.1) | for the server to run on.
-const port = 8080;
+// accesing enviroment variable
+const PORT = process.env.PORT ? process.env.PORT : 8080;
 const server = createServer((request, response) => {
   // give the repsonse according to the request made by the client
   response.statusCode = 200;
@@ -39,6 +40,6 @@ const server = createServer((request, response) => {
 
 // tells the node to start listening for incoming HTTP requests on port 8080.
 //  This is what "turns" the server on. listen is of an event type.
-server.listen(port, () => {
-  console.log(`server running at http://localhost:${port}`);
+server.listen(PORT, () => {
+  console.log(`server running at http://localhost:${PORT}`);
 });
